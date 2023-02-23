@@ -6,20 +6,19 @@
 using namespace std;
 
 InstructScene::InstructScene(IOnSceneChangedListener* impl, const Parameter& parameter) : AbstractScene(impl, parameter)
-, _NowSelect(0)
+, _cnt(0)
 {
 }
 
 bool InstructScene::update()
 {
-
-
 	if (Keyboard::getIns()->getPressingCount(KEY_INPUT_RETURN) == 1) {
 		Parameter parameter;
 		const bool stackClear = true;
-
 		_implSceneChanged->onSceneChanged(eScene::Title, parameter, stackClear);
 	}
+
+	_cnt++;
 
 	return true;
 }
@@ -27,12 +26,15 @@ bool InstructScene::update()
 void InstructScene::draw() const
 {
 	int color = GetColor(255, 255, 255);
-	DrawString(Define::WIN_W / 2, 20, "操作方法", color);
-	DrawString(Define::WIN_W / 2, 40, "　左移動；←，A", color);
-	DrawString(Define::WIN_W / 2, 60, "　右移動；→，D", color);
-	DrawString(Define::WIN_W / 2, 80, "落下加速；↓，S", color);
-	DrawString(Define::WIN_W / 2, 100, "　　回転：SPACE", color);
-	DrawString(Define::WIN_W / 2, 120, "ストック：LSHIFT", color);
+	int x = Define::INSTRUCT_X - 35;
 
-	DrawString(Define::WIN_W / 2, 140, "Returnキーを押してください．", color);
+	DrawString(Define::INSTRUCT_X, Define::INSTRUCT_Y, "操作方法", color);
+	DrawString(x, Define::INSTRUCT_Y + 40, "　左移動：←，A", color);
+	DrawString(x, Define::INSTRUCT_Y + 60, "　右移動：→，D", color);
+	DrawString(x, Define::INSTRUCT_Y + 80, "落下加速：↓，S", color);
+	DrawString(x, Define::INSTRUCT_Y + 100, "　　回転：SPACE", color);
+	DrawString(x, Define::INSTRUCT_Y + 120, "ストック：LSHIFT", color);
+	DrawString(x, Define::INSTRUCT_Y + 140, "一時停止：ESCAPE", color);
+
+	if(_cnt % 80 < 40) DrawString(x - 35, Define::INSTRUCT_Y + 220, "Enterキーを押してください．", color);
 }

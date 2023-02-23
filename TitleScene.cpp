@@ -7,13 +7,15 @@
 
 using namespace std;
 
-TitleScene::TitleScene(IOnSceneChangedListener* impl, const Parameter& parameter) : AbstractScene(impl, parameter),
-_nowSelect(0)
+TitleScene::TitleScene(IOnSceneChangedListener* impl, const Parameter& parameter) : AbstractScene(impl, parameter)
 {
+	this->initialize();
 }
 
 void TitleScene::initialize()
 {
+	_fontHandle = CreateFontToHandle(NULL, 8, 3);
+	_nowSelect = 0;
 }
 
 bool TitleScene::update()
@@ -48,23 +50,32 @@ bool TitleScene::update()
 
 void TitleScene::finalize() const
 {
+	DeleteFontToHandle(_fontHandle);
 }
 
 void TitleScene::draw() const
 {
-	DrawString(Define::START_X, Define::START_Y, "Start", GetColor(255, 255, 255));
-	DrawString(Define::INSTRUCTIONS_X, Define::INSTRUCTIONS_Y, "Instructions", GetColor(255, 255, 255));
-	DrawString(Define::END_X, Define::END_Y, "Exit", GetColor(255, 255, 255));
+	DrawStringToHandle(Define::TITLE_X, Define::TITLE_Y,
+		"■■■■■　■■■■　■■■■■　■■■　　■■■　　■■■\n"
+		"　　■　　　■　　　　　　■　　　■　　■　　■　　■　　　\n"
+		"　　■　　　■■■■　　　■　　　■■■　　　■　　　■■■\n"
+		"　　■　　　■　　　　　　■　　　■　■　　　■　　　　　　■\n"
+		"　　■　　　■■■■　　　■　　　■　　■　■■■　  ■■■"
+		, GetColor(255, 255, 255), _fontHandle);
+
+	DrawString(Define::TITLE_START_X, Define::TITLE_START_Y, "Start", GetColor(255, 255, 255));
+	DrawString(Define::TITLE_INSTRUCT_X, Define::TITLE_INSTRUCT_Y, "Instructions", GetColor(255, 255, 255));
+	DrawString(Define::TITLE_END_X, Define::TITLE_END_Y, "Exit", GetColor(255, 255, 255));
 
 	switch (_nowSelect) {//現在の選択状態に従って処理を分岐
 	case eTitleSelect::Start://スタート選択中なら
-		DrawString(Define::START_X, Define::START_Y, "_____", GetColor(255, 255, 255));
+		DrawString(Define::TITLE_START_X, Define::TITLE_START_Y, "_____", GetColor(255, 255, 255));
 		break;
 	case eTitleSelect::Instructions://未実装選択中なら
-		DrawString(Define::INSTRUCTIONS_X, Define::INSTRUCTIONS_Y, "____________", GetColor(255, 255, 255));
+		DrawString(Define::TITLE_INSTRUCT_X, Define::TITLE_INSTRUCT_Y, "____________", GetColor(255, 255, 255));
 		break;
 	case eTitleSelect::End://終了選択中なら
-		DrawString(Define::END_X, Define::END_Y, "____", GetColor(255, 255, 255));
+		DrawString(Define::TITLE_END_X, Define::TITLE_END_Y, "____", GetColor(255, 255, 255));
 		break;
 	}
 }

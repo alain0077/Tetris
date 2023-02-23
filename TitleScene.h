@@ -21,4 +21,5 @@ public:
 
 private:
 	int _nowSelect;
+	int _fontHandle;
 };

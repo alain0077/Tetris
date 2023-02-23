@@ -15,5 +15,5 @@ public:
 	void draw() const override;
 
 private:
-	int _NowSelect;
+	unsigned int _cnt;
 };

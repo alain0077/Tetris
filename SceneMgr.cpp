@@ -51,10 +51,6 @@ void SceneMgr::onSceneChanged(const eScene scene, const Parameter& parameter, co
 	case Result:
 		_sceneStack.push(make_shared<ResultScene>(this, parameter));
 		break;
-	case Prev:
-		if(!_sceneStack.empty()) _sceneStack.pop();
-		else _sceneStack.push(make_shared<TitleScene>(this, parameter));
-		break;
 	default:
 		// ƒGƒ‰[ˆ—
 		break;

@@ -5,5 +5,4 @@ enum eScene {
 	Game,		// Game‰æ–Ê
 	Instruct,	// ‘€ìà–¾‰æ–Ê
 	Result,		// ƒŠƒUƒ‹ƒg‰æ–Ê
-	Prev,		// ’¼‘O‚Ì‰æ–Ê
 };

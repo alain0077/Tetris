@@ -9,15 +9,17 @@ public:
 	const static int WIN_H;	//ウィンドウサイズ縦
 
 
-	//Title画面
-	const static int START_X;
-	const static int START_Y;
-	const static int INSTRUCTIONS_X;
-	const static int INSTRUCTIONS_Y;
-	const static int END_X;
-	const static int END_Y;
+	// Title画面
+	const static int TITLE_X;
+	const static int TITLE_Y;
+	const static int TITLE_START_X;
+	const static int TITLE_START_Y;
+	const static int TITLE_INSTRUCT_X;
+	const static int TITLE_INSTRUCT_Y;
+	const static int TITLE_END_X;
+	const static int TITLE_END_Y;
 
-	//Game画面
+	// Game画面
 	const static int GAME_WIN_X1;
 	const static int GAME_WIN_Y1;
 	const static int GAME_WIN_X2;
@@ -36,8 +38,16 @@ public:
 	const static int MINO_COL_NUM;
 	const static int MINO_ROW_NUM;
 
+	const static int GAME_SCORE_X;
+	const static int GAME_SCORE_Y;
+	const static int GAME_TIME_X;
+	const static int GAME_TIME_Y;
 
-	//Result画面
+	// 操作説明画面
+	const static int INSTRUCT_X;
+	const static int INSTRUCT_Y;
+
+	// Result画面
 	const static int Result_Score_X;
 	const static int Result_Score_Y;
 	const static int Result_Restart_X;
@@ -48,10 +58,6 @@ public:
 	enum eResultSelect {
 		Restart,
 		Title,
-
 		ResultNum,
 	};
-
-	//フレーム
-	const static int FRAME;
 };
