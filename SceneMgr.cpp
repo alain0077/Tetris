@@ -1,5 +1,6 @@
 #include "SceneMgr.h"
 #include "TitleScene.h"
+#include "InstructScene.h"
 #include "GameScene.h"
 #include "ResultScene.h"
 
@@ -43,6 +44,9 @@ void SceneMgr::onSceneChanged(const eScene scene, const Parameter& parameter, co
 		break;
 	case Game:
 		_sceneStack.push(make_shared<GameScene>(this, parameter));
+		break;
+	case Instruct:
+		_sceneStack.push(make_shared<InstructScene>(this, parameter));
 		break;
 	case Result:
 		_sceneStack.push(make_shared<ResultScene>(this, parameter));

@@ -35,7 +35,7 @@ bool TitleScene::update()
 			_implSceneChanged->onSceneChanged(eScene::Game, parameter, stackClear);
 			break;
 		case eTitleSelect::Instructions:
-			//_implSceneChanged->onSceneChanged(eScene::Instruct, parameter, stackClear);
+			_implSceneChanged->onSceneChanged(eScene::Instruct, parameter, stackClear);
 			break;
 		case eTitleSelect::End:
 			return false;

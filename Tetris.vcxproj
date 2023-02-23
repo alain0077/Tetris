@@ -142,6 +142,7 @@
     <ClCompile Include="AbstractScene.cpp" />
     <ClCompile Include="Define.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="InstructScene.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Parameter.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="IIncScoreListener.h" />
+    <ClInclude Include="InstructScene.h" />
     <ClInclude Include="IOnSceneChangedListener.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Parameter.h" />
