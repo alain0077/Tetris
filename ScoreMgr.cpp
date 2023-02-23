@@ -45,5 +45,5 @@ void ScoreMgr::draw() const
 
 int ScoreMgr::getTime()
 {
-	return (GetNowCount() - _time) / 1000;
+	return _time / 1000;
 }
