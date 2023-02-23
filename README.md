@@ -1,5 +1,6 @@
 # Tetris
 C++でテトリスを作成しました．
+実行ファイルは[こちら](https://github.com/alain0077/Tetris/blob/master/Tetris.exe)にあります．
 描画ライブラリとして，[DXライブラリ](https://dxlib.xsrv.jp/index.html)を用いました．
 開発環境は，Windows 10，Visiual Studio2022です．
 以前作成した[シューティングゲーム](https://github.com/alain0077/study_c/tree/master/c%2B%2B/Game/shoot-gaming)のシステム（設計・クラスなど）を再利用しています．
