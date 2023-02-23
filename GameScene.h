@@ -18,6 +18,7 @@ public:
 
 private:
 	int _nowSelect;
+	bool _pauseFlag;
 	std::shared_ptr<ScoreMgr> _implScore;
 	std::unique_ptr<AbstractGame> _implGame;
 };

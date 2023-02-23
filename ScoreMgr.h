@@ -25,7 +25,15 @@ public:
 	// return final time
 	int getTime();
 
+	// stop time
+	void stopTime() { _stopFlag = true; }
+
+	// start time
+	void startTime() { _stopFlag = false; }
+
 private:
 	int _time;
+	int _preCount;
 	int _score;
+	bool _stopFlag;
 };
