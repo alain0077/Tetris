@@ -55,7 +55,7 @@ void GameScene::finalize() const
 
 void GameScene::draw() const
 {
-	_implGame->draw();
+	if (!_pauseFlag) _implGame->draw();
 	DrawBox(0, 0, Define::GAME_WIN_X2 + 2, Define::GAME_WIN_Y1 - 1, GetColor(0, 0, 0), true);
 	_implScore->draw();
 
